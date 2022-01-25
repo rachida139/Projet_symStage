@@ -1,0 +1,43 @@
+{% extends 'app.html.twig' %}
+
+{% block body %}
+
+<div class="m-4">
+<table class="table table-primary">
+    <thead>
+    <tr>
+        <th>Libelle</th>
+        <th>Description</th>
+        <th>Statut</th>
+        <th>Ordre</th>
+        <th>Lien</th>
+        <th>Icon</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for row in rows %}
+
+    <tr>
+        <td>{{ row.libelle }}</td>
+        <td>{{ row.description }}</td>
+        {% if (row.statut ==1) %}
+        <td>Oui</td>
+        {% else %}
+        <td>Non</td>
+        {% endif %}
+        <td>{{ row.orders }}</td>
+        <td>{{ row.lien }}</td>
+        <td>{{ row.alt }}</td>
+         <td>
+        <a href="/reassurance/edit/" class="btn btn-success">Modifier</a>
+        <a href="/reassurance/delete/{{row.id}}" onclick="return confirm('Etes-vous sûr de supprimer cet article?');" class="btn btn-danger">Supprimer</a>
+
+        </td>
+    </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends 'app.html.twig' %}
+
+{% block body %}
+
+<div class="">
+
+ <section class="vh-50" style="background-color: #eee;">
+  <div class="container h-50">
+    <div class="row d-flex justify-content-center align-items-center h-50">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">L'ajout</p>
+
+                <form class="mx-1 mx-md-4">
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                      <label class="form-label">Libelle</label>
+                      <input type="text" class="form-control" />
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control"  rows="3"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                      <label class="form-label">Statut</label>
+                      <select  class="form-control" >
+                      <option value="1">Oui</option>
+                      <option value="0">Non</option>
+                      </select>
+                    </div>
+                  </div>
+                 <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                      <label class="form-label">Lien</label>
+                      <input type="text" class="form-control" />
+                    </div>
+                  </div>
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                      <label class="form-label">Icon</label>
+                      <input type="text" class="form-control" placeholder="alt" />
+                      <input type="file" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                      <label class="form-label">Order</label>
+                      <input type="number" min="1" max="100" class="form-control" />
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="button" class="btn btn-primary btn-lg">Ajouter</button>
+                  </div>
+
+                </form>
+
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                <img src="{{ asset('images/img1.png') }}" class="img-fluid" alt="Sample image">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+{% endblock %}
