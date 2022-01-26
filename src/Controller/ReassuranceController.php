@@ -31,7 +31,6 @@ class ReassuranceController extends AbstractController
      */
     public function store(Request $request)
     {
-    
         $entityManager = $this->getDoctrine()->getManager();
         $data = new Reassurance();
 
