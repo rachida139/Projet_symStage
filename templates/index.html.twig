@@ -3,6 +3,12 @@
 {% block body %}
 
 <div class="m-4">
+{% if rows|length < 10 %}
+<a href="{{ path('store')}}"  class="nav-link ntn btn-primary ">Nouveau enregistrement</a>
+{% else %}
+<a href="{{ path('store')}}"  class="nav-link ntn btn-primary disabled"> Nouveau enregistrement</a>
+{% endif %}
+
 <table class="table table-primary">
     <thead>
     <tr>
@@ -30,7 +36,7 @@
         <td>{{ row.lien }}</td>
         <td>{{ row.alt }}</td>
          <td>
-        <a href="/reassurance/edit/" class="btn btn-success">Modifier</a>
+        <a href="/reassurance/edit/{{row.id}}" class="btn btn-success">Modifier</a>
         <a href="/reassurance/delete/{{row.id}}" onclick="return confirm('Etes-vous sûr de supprimer cet article?');" class="btn btn-danger">Supprimer</a>
 
         </td>
