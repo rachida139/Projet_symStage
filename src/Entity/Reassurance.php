@@ -24,7 +24,6 @@ class Reassurance
 
     /**
      * @ORM\Column(type="string", length=255)
-      * @Assert\Length(max=100)
      */
     private $description;
 

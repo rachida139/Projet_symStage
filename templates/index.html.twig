@@ -1,4 +1,13 @@
 {% extends 'app.html.twig' %}
+{% block stylesheets %}
+<style>
+img{
+    height: 40px; 
+    width: 40px;
+    position: relative;
+}
+</style>
+{% endblock %}
 
 {% block body %}
 
@@ -12,12 +21,12 @@
 <table class="table table-primary">
     <thead>
     <tr>
+        <th>Icone</th>
         <th>Libelle</th>
         <th>Description</th>
         <th>Statut</th>
         <th>Ordre</th>
         <th>Lien</th>
-        <th>Icon</th>
         <th>Action</th>
     </tr>
     </thead>
@@ -25,6 +34,9 @@
         {% for row in rows %}
 
     <tr>
+        <td>
+                <img src="{{asset('images/')}}{{row.icone}} " class="img-fluid" alt="{{ row.icone }}">
+        </td>
         <td>{{ row.libelle }}</td>
         <td>{{ row.description }}</td>
         {% if (row.statut ==1) %}
@@ -34,7 +46,6 @@
         {% endif %}
         <td>{{ row.orders }}</td>
         <td>{{ row.lien }}</td>
-        <td>{{ row.alt }}</td>
          <td>
         <a href="/reassurance/edit/{{row.id}}" class="btn btn-success">Modifier</a>
         <a href="/reassurance/delete/{{row.id}}" onclick="return confirm('Etes-vous sûr de supprimer cet article?');" class="btn btn-danger">Supprimer</a>

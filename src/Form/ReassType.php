@@ -22,11 +22,12 @@ class ReassType extends AbstractType
             ->add('alt')
             ->add('orders')
             ->add('lien')
-            ->add('icone', FileType::class, [
-                'label' => 'Icone',
-               'data_class' => null,
-               'required' => false,
-            ])
+            // ->add('icone')
+            // ->add('icone', ::class, [
+            //     'label' => 'Icone',
+            //    'data_class' => null,
+            //    'required' => false,
+            // ])
             ->add('statut', ChoiceType::class, [
                 'choices' => [
                     'Oui' => '1',

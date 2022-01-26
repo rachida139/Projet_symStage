@@ -34,9 +34,12 @@ class ReassuranceController extends AbstractController
     
         $entityManager = $this->getDoctrine()->getManager();
         $data = new Reassurance();
+
         $form = $this->createForm(ReassType::class, $data);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $img=$request->get("icone");
+            $data->setIcone($img);
             $data = $form->getData();
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($data);
